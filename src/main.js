@@ -12,7 +12,17 @@ import './style/common.less'
 import './style/animate.css'
 import axios from 'axios'
 import config from './config/index.js'
-import { Dialog, Toast, Area, Field, CellGroup, Popup, Picker, Cell, Loading } from 'vant';
+import {
+  Dialog,
+  Toast,
+  Area,
+  Field,
+  CellGroup,
+  Popup,
+  Picker,
+  Cell,
+  Loading
+} from 'vant';
 
 Vue.config.productionTip = false
 Vue.use(Dialog)
@@ -29,7 +39,9 @@ window.$vvue = new Vue({
   el: '#app',
   router,
   store,
-  components: { App },
+  components: {
+    App
+  },
   template: '<App/>'
 })
 
@@ -40,11 +52,15 @@ document.body.addEventListener('touchmove', function (event) {
   if (!window.canPassive) {
     event.preventDefault()
   }
-}, { passive: false })
+}, {
+  passive: false
+})
 document.addEventListener('click', (e) => {
   //console.log(e)
   if (e.target && e.target.nodeName == 'IMG') e.preventDefault();
-}, { passive: false });
+}, {
+  passive: false
+});
 
 $('body').on('blur', 'input,select', function (event) {
   setTimeout(() => {
@@ -72,8 +88,6 @@ Date.prototype.Format = function (fmt) { //author:
 Weixin({
   img_url: require('./assets/thumb.png'),
   link: location.href,
-  title: '496老酒配方',
-  desc: '496老酒配方'
-}, () => {
-  $("#video")[0].load();
-})
+  title: '一坛好酒·私享定制，来了！',
+  desc: '私享定制，由你开始'
+}, () => {})

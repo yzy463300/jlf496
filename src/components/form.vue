@@ -20,7 +20,7 @@
           </div>
           
           <div class="city input_wrap bbox" @click="cityShow = true">
-            <p class="h">收获地址:</p>
+            <p class="h">收货地址:</p>
             <input disabled="true" v-model="value" type="text" placeholder="请选择所在城市" />
             <img class="arr" src="../assets/form/arr.png" height="18" width="24" alt />
           </div>
@@ -30,7 +30,7 @@
           </div>
           <div class="phone input_wrap bbox">
             <p class="h">备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注:</p>
-            <input v-model="remarks" type="text" placeholder="" />
+            <input v-model="remarks" type="text" placeholder="备注" />
           </div>
           <!-- <div class="address input_wrap bbox">
             <p class="h">备注：</p>
@@ -179,7 +179,7 @@ export default {
 }
 .form {
   .h {
-    margin-right: 0.1rem;
+    margin-right: 0.2rem;
     font-size: 0.32rem;
     color: #000;
   }
@@ -220,7 +220,7 @@ export default {
     input {
       color: #000;
       font-size: 0.32rem;
-      width: 50%;
+      width: 65%;
       border: none;
       background-color: transparent;
     }

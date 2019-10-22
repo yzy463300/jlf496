@@ -446,14 +446,20 @@ body {
 }
 
 @keyframes jiuAnimeLeft {
-  from {
+  0% {
     opacity: 0;
-    transform: translate3d(-100%, 0, 0) scale(.5);
+    transform: translate3d(-100%, 0%, 0) scale(.5);
   }
 
-  to {
+
+  50% {
     opacity: 1;
-    transform: none;
+    transform: translate3d(0, 0, 0) scale(1.2);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(100%, 0%, 0) scale(.5);
   }
 }
 
@@ -463,15 +469,9 @@ body {
     transform: none;
   }
 
-  25% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1.1);
-  }
+  25% {}
 
-  100% {
-    opacity: 0;
-    transform: translate3d(100%, 0, 0) scale(.5);
-  }
+  100% {}
 }
 
 @keyframes fadeInLeft {

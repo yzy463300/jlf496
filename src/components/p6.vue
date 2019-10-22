@@ -28,7 +28,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.animate($("#jiu1 .p2 img"));
-    }, 1300);
+    }, 500);
   },
   components: {},
   methods: {
@@ -38,25 +38,15 @@ export default {
         .anime(
           "jiuAnimeLeft",
           "1s",
-          "cubic-bezier(0.14, 0.85, 0.28, 0.98)",
+          "cubic-bezier(0.06, 0.96, 0.31, 1.1)",
           "both",
           { display: "inline" },
           () => {
-            setTimeout(() => {
-              dom.anime(
-                "jiuAnimeRight",
-                "1.5s",
-                "cubic-bezier(0.14, 0.85, 0.28, 0.98)",
-                "both",
-                () => {
-                  dom.eq(this.index - 1).hide();
-                  if (this.index >= this.list.length) {
-                    this.index = 0;
-                  }
-                  this.animate(dom);
-                }
-              );
-            }, 500);
+            dom.eq(this.index - 1).hide();
+            if (this.index >= this.list.length) {
+              this.index = 0;
+            }
+            this.animate(dom);
           }
         );
     }
