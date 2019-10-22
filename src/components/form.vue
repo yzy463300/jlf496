@@ -93,6 +93,7 @@ export default {
   },
   methods: {
     onHide() {
+      console.log("form");
       this.$emit("on-hide");
     },
     onSubmit() {
