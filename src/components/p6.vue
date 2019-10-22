@@ -5,7 +5,11 @@
         <img src="../assets/logo.png" alt />
       </div>
       <div class="p1"><img src="../assets/6/61.png" alt=""></div>
-      <div class="p2"><img class="hide" v-for="(item,index) in list" :key="index" :src="item" alt=""></div>
+      <div class="p2">
+        <div class="img_wrap hide" v-for="(item,index) in list" :key="index">
+          <img :src="item" alt="">
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -27,8 +31,8 @@ export default {
   },
   mounted() {
     setTimeout(() => {
-      this.animate($("#jiu1 .p2 img"));
-    }, 500);
+      this.animate($("#jiu1 .p2 .img_wrap"));
+    });
   },
   components: {},
   methods: {
@@ -36,19 +40,21 @@ export default {
       dom
         .eq(this.index++)
         .anime(
-          "jiuAnimeLeft",
-          "1s",
+          "jiuAnimeZoom",
+          "1.5s",
           "cubic-bezier(0.06, 0.96, 0.31, 1.1)",
           "both",
-          { display: "inline" },
-          () => {
-            dom.eq(this.index - 1).hide();
-            if (this.index >= this.list.length) {
-              this.index = 0;
-            }
-            this.animate(dom);
+          { display: "block" },
+          function() {
+            $(this).hide();
           }
         );
+      if (this.index >= this.list.length) {
+        this.index = 0;
+      }
+      setTimeout(() => {
+        this.animate(dom);
+      }, 800);
     }
   }
 };
@@ -72,8 +78,16 @@ export default {
   }
 }
 .p2 {
+  position: relative;
   width: 100%;
   height: 60%;
+  .img_wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
   img {
     height: 100%;
   }
